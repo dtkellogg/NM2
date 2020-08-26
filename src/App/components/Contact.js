@@ -11,8 +11,9 @@ export default function Contact() {
 
   console.log(name);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitted(true);
 
     const dataToSubmit = {
       name,
@@ -21,15 +22,28 @@ export default function Contact() {
       subject,
       message,
     };
+    console.log(dataToSubmit)
     
-    axios.post("/api/sendMail", dataToSubmit);
-    setName('')
-    setEmail('')
-    setPhone('')
-    setSubject('')
-    setMessage('')
-    setSubmitted(true)
+    // api(dataToSubmit)
+    await axios
+      .post("/api/v1/messages", dataToSubmit)
+      .then(response => {console.log(`axios response: ${response.data}`)})
+
+      // setSubmitted(false)
+
+      console.log(submitted)
+    // setName('')
+    // setEmail('')
+    // setPhone('')
+    // setSubject('')
+    // setMessage('')
+    // setSubmitted(false)
   };
+
+    //  const api = React.useEffect((dataToSubmit) => {
+    //     axios.post("/api/v1/messages", dataToSubmit).then(setSubmitted(true));
+    //   }, [])
+    
 
   // React.useEffect(() => {
   //   const id = window.setTimeout(() => {
