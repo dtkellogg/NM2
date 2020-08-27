@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import '../../index.css'
 
 export default function Contact() {
   const [firstName, setFirstName] = React.useState("");
@@ -26,11 +27,17 @@ export default function Contact() {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form__footer" onSubmit={handleSubmit}>
       <div className="form__header">
-        <h1>Newsletter Signup Form</h1>
-        <h4>Please provide your name and email address</h4>
-        {submitted && <p className="form__success-message">Successfully Registered for Newsletter</p>}
+        <h3 className="text-size-3">Newsletter Signup Form</h3>
+        <h4 className="text-size-4">
+          Please provide your name and email address
+        </h4>
+        {submitted && (
+          <p className="form__success-message">
+            Successfully Registered for Newsletter
+          </p>
+        )}
         {/* {submitted && <p>Email has been sent.</p>} */}
       </div>
       <div className="form__content">
@@ -38,6 +45,7 @@ export default function Contact() {
           {/* <label>Name</label> */}
           <input
             type="text"
+            className="form__input input__footer"
             placeholder="Your first name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
@@ -47,6 +55,7 @@ export default function Contact() {
           {/* <label>Name</label> */}
           <input
             type="text"
+            className="form__input input__footer"
             placeholder="Your last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
@@ -56,6 +65,7 @@ export default function Contact() {
           {/* <label>Email</label> */}
           <input
             type="email"
+            className="form__input input__footer"
             placeholder="Your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +73,7 @@ export default function Contact() {
         </div>
 
         <button className="btn btn__form" onClick={handleSubmit}>
-          Submit it!
+          Submit
         </button>
       </div>
     </form>

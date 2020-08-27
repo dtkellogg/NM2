@@ -22,6 +22,14 @@ export const sponsors = [
     name: "Upper Crust",
     avatar: require("./img/svg/partner__upperCrust.svg"),
   },
+  {
+    name: "Centene Corporation",
+    avatar: require("./img/svg/partner__centene.svg"),
+  },
+  {
+    name: "UCD L&S",
+    avatar: require("./img/svg/partner__l&s.svg"),
+  },
 ];
 
 export const members = [

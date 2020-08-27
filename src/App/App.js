@@ -1,33 +1,46 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 import "../index.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Team from "./pages/Team";
-import Contact from "./components/Contact";
-import Involved from "./pages/Involved";
+import Loading from "./components/Loading";
+
 // import group from "./img/svg/group.svg";
+
+const About = React.lazy(() => import("./pages/About"));
+const Home = React.lazy(() => import("./pages/Home"));
+const Media = React.lazy(() => import("./pages/Media"));
+const Team = React.lazy(() => import("./pages/Team"));
+const Contact = React.lazy(() => import("./pages/Contact"));
 
 
 export default function App() {
+  const location = useLocation()
+  console.log(location)
+
   return (
-    <Router>
+    <React.Fragment>
+      <Nav />
       <div className="container__main">
-        <Nav />
         <div className="container__body">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/team" component={Team} />
-            <Route path="/involved" component={Involved} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/*">404 Page not found</Route>
-          </Switch>
+          <React.Suspense fallback={<Loading />}>
+              <TransitionGroup>
+                <CSSTransition timeout={250} classNames="fade" key={location.key}>
+                  <Switch location={location}>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/about" component={About} />
+                    <Route path="/team" component={Team} />
+                    <Route path="/involved" component={Media} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/*">404 Page not found</Route>
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup> 
+          </React.Suspense>
         </div>
       </div>
-        <Footer className="footer"/>
-    </Router>
+      <Footer className="footer" />
+      </React.Fragment>
   );
 }
