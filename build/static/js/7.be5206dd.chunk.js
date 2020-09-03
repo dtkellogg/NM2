@@ -1,0 +1,2 @@
+(this.webpackJsonpclient=this.webpackJsonpclient||[]).push([[7],{103:function(e,t,a){"use strict";a.r(t),a.d(t,"default",(function(){return i}));var n=a(0),c=a.n(n);a(25),a(15);function i(){return c.a.createElement("div",{className:"media"},c.a.createElement("h2",{className:"text-size-2"},"Media Page"))}}}]);
+//# sourceMappingURL=7.be5206dd.chunk.js.map

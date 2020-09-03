@@ -7,7 +7,7 @@ export const sponsors = [
     avatar: require("./img/svg/partner__dickeys.svg"),
   },
   {
-    name: "Chickpeas",
+    name: "ChickPeas",
     avatar: require("./img/svg/partner__chickpeas.svg"),
   },
   {

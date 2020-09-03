@@ -15,6 +15,15 @@ const styles = {
 export default function Loading({ text = "Loading", speed = 300 }) {
   const [content, setContent] = React.useState(text);
 
+  // React.useEffect(() => {
+  //   if (content !== "Loading") {
+  //     document.title = content
+
+  //   }
+  // })
+
+  console.log(content)
+
   React.useEffect(() => {
     const id = window.setInterval(() => {
       setContent((content) => {

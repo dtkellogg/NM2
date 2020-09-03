@@ -12,8 +12,8 @@ export default function Team() {
       /> */}
       <div className="team__members">
         <div className="team__header">
-          <h2 className="text-size-2">Meet our lovely team members!</h2>
-          <h3 className="text-size-3">Our heros from around the world</h3>
+          <h2 className="text-size-2 light-yellow">Meet our Lovely Team Members!</h2>
+          <h3 className="text-size-3">Making the world better one dinner at a time</h3>
         </div>
         <ul className="team__list">
           {members.map(({ name, avatar }) => {
@@ -32,14 +32,14 @@ export default function Team() {
         </ul>
       </div>
 
-      <div className="team__members">
+      <div className="sponsors">
         <div className='sponsor__header'>
           <h2 className="text-size-2">And our sponsors...</h2>
         </div>
-        <ul className="team__list">
+        <ul className="sponsor__list">
           {sponsors.map(({ name, avatar }) => {
             return (
-              <li key={name} className="sponsor__item">
+              <li key={name} className={`sponsor__item ${name}`}>
                 <img
                   src={avatar}
                   alt="Sponsor Avatar"

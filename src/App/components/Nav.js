@@ -1,65 +1,72 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,
+  // useRouteMatch,
+  // useLocation
+} from "react-router-dom";
 import logo from "../../img/svg/logo.svg";
-// import logoMain from "../../img/svg/logo_main.svg";
 import "../../index.css"
 
 const activeStyle = {
   color: "#e62424",
-  background_color: "black",
+  // backgroundColor: "#e62424",
+  fontWeight: "bold",
+  paddingBottom: "0.1rem",
+  borderBottom: "1px solid #e62424",
 };
 
 export default function Nav() {
+
   return (
     <div>
-      {/* <div className="nav__upper_container">
-        <img src={logoMain} className="logo" alt="logo" />
-        <div className="nav__details">
-          <h3>Monday, Tuesday & Wednesday Nights</h3>
-          <h4>From 8:00pm - 10:30pm</h4>
-          <h4>Central Park</h4>
-          <h4>325 C St. Davis, CA</h4>
-        </div>
-      </div> */}
       <nav className="nav">
-        <img src={logo} className="logo__nav" alt="logo" />
+        <a href='/'>
+          <img src={logo} className="logo__nav" alt="logo" />
+        </a>
         <ul className="nav__row">
           <li>
             <NavLink
               to="/"
               exact
               activeStyle={activeStyle}
-              className="nav-link"
+              className="nav-link text-size-3_5"
             >
-              <span className="text-size-3_5">Home</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" activeStyle={activeStyle} className="nav-link">
-              <span className="text-size-3_5">About</span>
+              Home
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/involved"
+              to="/about"
               activeStyle={activeStyle}
-              className="nav-link"
+              className="nav-link text-size-3_5"
             >
-              <span className="text-size-3_5">Media</span>
+              About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/team" activeStyle={activeStyle} className="nav-link">
-              <span className="text-size-3_5">Team</span>
+            <NavLink
+              to="/media"
+              activeStyle={activeStyle}
+              className="nav-link text-size-3_5"
+            >
+              Media
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/team"
+              activeStyle={activeStyle}
+              className="nav-link text-size-3_5"
+            >
+              Team
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/contact"
               activeStyle={activeStyle}
-              className="nav-link"
+              className="nav-link text-size-3_5"
             >
-              <span className="text-size-3_5">Contact</span>
+              Contact
             </NavLink>
           </li>
         </ul>
