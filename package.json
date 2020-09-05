@@ -14,6 +14,7 @@
     "react-icons": "^3.11.0",
     "react-iframe": "^1.8.0",
     "react-map-gl": "^5.2.7",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-stripe-checkout": "^2.6.3",
     "react-transition-group": "^4.4.1",
@@ -21,7 +22,7 @@
     "slugify": "^1.4.5"
   },
   "scripts": {
-    "start": "env-cmd -f ./config/myvar.env react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
